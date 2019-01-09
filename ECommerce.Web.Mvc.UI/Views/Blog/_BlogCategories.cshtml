@@ -1,0 +1,9 @@
+﻿@model IEnumerable<ECommerce.Services.Blogs.ViewModels.BlogCategoryViewModel>
+@{
+    ViewBag.Title = "_Categories";
+}
+
+@foreach (var item in Model)
+{
+    @Html.ActionLink(item.BlogCategoryName, "PostByCategory", "Blog", new { postId = item.BlogCategoryName }, null)
+}

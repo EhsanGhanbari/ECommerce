@@ -1,0 +1,45 @@
+﻿@model ECommerce.Services.Blogs.ViewModels.BlogViewModel
+@{
+    ViewBag.Title = "EditPost";
+    Layout = "../Shared/_Layout.Main.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        <span>
+            @Html.DisplayFor(blog => blog.Title)
+        </span>
+        <span>
+            @Html.TextBoxFor(blog => blog.Title)
+        </span>
+    </div>
+
+    <div>
+        <span>
+            @Html.DisplayFor(blog => blog.PostSlug)
+        </span>
+        <span>
+            @Html.TextAreaFor(blog => blog.PostSlug)
+        </span>
+    </div>
+    <div>
+        <span>
+            @Html.DisplayFor(blog => blog.TageName)
+        </span>
+        <span>
+            @*@Html.DropDownListFor(blog => blog.PostSlug)*@
+        </span>
+    </div>
+    <div>
+        <span>
+            @Html.DisplayFor(blog => blog.Summary)
+        </span>
+        <span>
+            @Html.TextAreaFor(blog => blog.Summary)
+        </span>
+    </div>
+    <div>
+        <input type="submit" name="Edit" />
+    </div>
+}

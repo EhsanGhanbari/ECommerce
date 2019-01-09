@@ -1,0 +1,41 @@
+﻿@model ECommerce.Services.Products.VeiwModels.ProductViewModel 
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Master/Views/Shared/_Layout.Master.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(product=>product.Name)
+        @Html.TextBoxFor(product=>product.Name)
+    </div>
+    <div>
+        @Html.LabelFor(product=>product.Category)
+        @Html.TextBoxFor(product=>product.Category)
+    </div>
+    
+    <div>
+        @Html.LabelFor(product=>product.Color)
+        @Html.TextBoxFor(product=>product.Color)
+    </div>
+    <div>
+        @Html.LabelFor(product=>product.Price)
+        @Html.TextBoxFor(product=>product.Price)
+    </div>
+    <div>
+        @Html.LabelFor(product=>product.Size)
+        @Html.TextBoxFor(product=>product.Size)
+    </div>
+    <div>
+        @Html.LabelFor(product=>product.Brand)
+        @Html.TextBoxFor(product=>product.Brand)
+    </div>
+    <div>
+        @Html.LabelFor(product=>product.Description)
+        @Html.TextBoxFor(product=>product.Description)
+    </div>
+    <div>
+        <input type="submit" value="Edit"/>
+    </div>
+}

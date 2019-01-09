@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{600EA515-5EC9-426C-963D-83941872E97F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ECommerce.Repository.Persister</RootNamespace>
+    <AssemblyName>ECommerce.Repository.Persister</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.1.3.0.733\lib\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\AccountMapping.cs" />
+    <Compile Include="Accounts\ManagementAccountMapping.cs" />
+    <Compile Include="Accounts\MembersAccountMapping.cs" />
+    <Compile Include="Marketings\AffiliateMapping.cs" />
+    <Compile Include="BasketMapping.cs" />
+    <Compile Include="BlogMapping.cs" />
+    <Compile Include="Managements\ContactMapping.cs" />
+    <Compile Include="CourierMapping.cs" />
+    <Compile Include="CustomerMapping.cs" />
+    <Compile Include="DiscountMapping.cs" />
+    <Compile Include="DownloadMapping.cs" />
+    <Compile Include="ForumMapping.cs" />
+    <Compile Include="GroupMapping.cs" />
+    <Compile Include="LanguageMapping.cs" />
+    <Compile Include="LotteryMapping.cs" />
+    <Compile Include="MessageMapping.cs" />
+    <Compile Include="NewsMapping.cs" />
+    <Compile Include="Orders\OrderItemMapping.cs" />
+    <Compile Include="Orders\OrderMapping.cs" />
+    <Compile Include="Products\ProductCatalogMapping.cs" />
+    <Compile Include="Products\ProductMapping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Managements\ReportMapping.cs" />
+    <Compile Include="ShippingMapping.cs" />
+    <Compile Include="StoreMapping.cs" />
+    <Compile Include="TaxMapping.cs" />
+    <Compile Include="VendorMapping.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ECommerce.Infrastructure\ECommerce.Infrastructure.csproj">
+      <Project>{05F8791A-0E49-4557-97C0-BE8E04EAA095}</Project>
+      <Name>ECommerce.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ECommerce.Model\ECommerce.Model.csproj">
+      <Project>{7351d65e-c338-4f3d-8a61-16272fea7dca}</Project>
+      <Name>ECommerce.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

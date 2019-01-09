@@ -1,0 +1,16 @@
+﻿
+@model IEnumerable<ECommerce.Services.Blogs.ViewModels.BlogViewModel>
+@{
+    ViewBag.Title = "List";
+    Layout = "../Shared/_Layout.Main.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    @Html.ActionLink(item.Title, "Post", "Blog", new { postId = item.PostId }, null)
+    <br />
+}
+
+
+
+

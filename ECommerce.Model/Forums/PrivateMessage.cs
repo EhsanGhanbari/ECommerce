@@ -1,0 +1,72 @@
+﻿using System;
+using ECommerce.Infrastructure.Domain;
+using ECommerce.Model.Customers;
+
+namespace ECommerce.Model.Forums
+{
+    /// <summary>
+    /// Represents a private message
+    /// </summary>
+    public class PrivateMessage : EntityBase<Guid>
+    {
+        /// <summary>
+        /// Gets or sets the store identifier
+        /// </summary>
+        public virtual int StoreId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the customer identifier who sent the message
+        /// </summary>
+        public virtual int FromCustomerId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the customer identifier who should receive the message
+        /// </summary>
+        public virtual int ToCustomerId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the subject
+        /// </summary>
+        public virtual string Subject { get; set; }
+
+        /// <summary>
+        /// Gets or sets the text
+        /// </summary>
+        public virtual string Text { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indivating whether message is read
+        /// </summary>
+        public virtual bool IsRead { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indivating whether message is deleted by author
+        /// </summary>
+        public virtual bool IsDeletedByAuthor { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indivating whether message is deleted by recipient
+        /// </summary>
+        public virtual  bool IsDeletedByRecipient { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date and time of instance creation
+        /// </summary>
+        public virtual DateTime CreatedOnUtc { get; set; }
+
+        /// <summary>
+        /// Gets the customer who sent the message
+        /// </summary>
+        public virtual Customer FromCustomer { get; set; }
+
+        /// <summary>
+        /// Gets the customer who should receive the message
+        /// </summary>
+        public virtual Customer ToCustomer { get; set; }
+
+        protected override void Validate()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title>ECommerce</title>
+    <link href="~/Content/Members/content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Members/content/carousel.css" rel="stylesheet" />
+    <script src="~/Content/Members/content/bootstrap.js"></script>
+    <script src="~/Content/Members/content/holder.js"></script>
+    <script src="~/Content/Members/content/jquery.js"></script>
+</head>
+
+
+
+<body style="background-image: url('~/Content/Members/img/b1.png'); background-repeat: repeat">
+    <div class="navbar-wrapper">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Blog", "List", "Blog")</li>
+                        <li>@Html.ActionLink("News", "List", "News")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+</body>
+</html>

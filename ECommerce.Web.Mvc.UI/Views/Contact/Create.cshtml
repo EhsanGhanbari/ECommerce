@@ -1,0 +1,31 @@
+﻿@model ECommerce.Services.Contacts.ContactViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(contact=>contact.Name)
+        @Html.TextBoxFor(contact => contact.Name)
+    </div>
+    
+    <div>
+        @Html.LabelFor(contact => contact.Email)
+        @Html.TextBoxFor(contact => contact.Email)
+    </div>
+    <div>
+        @Html.LabelFor(contact => contact.Title)
+        @Html.TextBoxFor(contact => contact.Title)
+    </div>
+    <div>
+        @Html.LabelFor(contact=>contact.Body)
+        @Html.TextAreaFor(contact=>contact.Body)
+    </div>
+
+    <div>
+        <input type="submit" value="Create"/>
+    </div>
+}
+
+

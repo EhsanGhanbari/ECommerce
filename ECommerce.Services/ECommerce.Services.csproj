@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99763A98-4306-4691-81DD-AA062D4C4069}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ECommerce.Services</RootNamespace>
+    <AssemblyName>ECommerce.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.4.0.0.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\AccountService.cs" />
+    <Compile Include="Accounts\AccountMapper.cs" />
+    <Compile Include="Accounts\IAccountService.cs" />
+    <Compile Include="Accounts\IAuthenticationService.cs" />
+    <Compile Include="Accounts\Messaging\ChangePasswordRequest.cs" />
+    <Compile Include="Accounts\Messaging\ChangePasswordResponse.cs" />
+    <Compile Include="Accounts\Messaging\CreateAccountRequest.cs" />
+    <Compile Include="Accounts\Messaging\CreateAccountResponse.cs" />
+    <Compile Include="Accounts\Messaging\GetAccountRequest.cs" />
+    <Compile Include="Accounts\Messaging\GetAccountResponse.cs" />
+    <Compile Include="Accounts\Messaging\GetAllAccountRequest.cs" />
+    <Compile Include="Accounts\Messaging\GetAllAccountResponse.cs" />
+    <Compile Include="Accounts\Messaging\RemoveAccountRequest.cs" />
+    <Compile Include="Accounts\Messaging\RemoveAccountResponse.cs" />
+    <Compile Include="Accounts\Messaging\UpdateAccountRequest.cs" />
+    <Compile Include="Accounts\Messaging\UpdateAccountResponse.cs" />
+    <Compile Include="Accounts\Validation\ChangePasswordValidation.cs" />
+    <Compile Include="Accounts\Validation\RegisterValidation.cs" />
+    <Compile Include="Accounts\ViewModel\AccountViewModel.cs" />
+    <Compile Include="Blogs\ViewModels\BlogCategoryViewModel.cs" />
+    <Compile Include="Blogs\ViewModels\BlogTagViewModel.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogCategoriesRequest.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogCategoriesResponse.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogCommentsRequest.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogCommentsResponse.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogPostsByCategoryRequest.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogPostsByCategoryResponse.cs" />
+    <Compile Include="Blogs\Messaging\RemoveBlogCategoryRequest.cs" />
+    <Compile Include="Blogs\Messaging\RemoveBlogCategoryResponse.cs" />
+    <Compile Include="Blogs\Messaging\RemoveBlogCommentRequest.cs" />
+    <Compile Include="Blogs\Messaging\RemoveBlogCommentResponse.cs" />
+    <Compile Include="Blogs\Messaging\RemoveBlogTagRequest.cs" />
+    <Compile Include="Blogs\Messaging\RemoveBlogTagResponse.cs" />
+    <Compile Include="Customers\CustomerInvalidException.cs" />
+    <Compile Include="Loggings\ILogingService.cs" />
+    <Compile Include="Loggings\LogingService.cs" />
+    <Compile Include="Marketings\Affiliates\AffiliateService.cs" />
+    <Compile Include="Marketings\Affiliates\AffiliateMapper.cs" />
+    <Compile Include="Marketings\Affiliates\AffiliateValidation.cs" />
+    <Compile Include="Marketings\Affiliates\AffiliateViewModel.cs" />
+    <Compile Include="Accounts\AuthenticationService.cs" />
+    <Compile Include="Marketings\Affiliates\IAffiliateService.cs" />
+    <Compile Include="Marketings\Affiliates\Messaging\CreateAffiliateRequest.cs" />
+    <Compile Include="Marketings\Affiliates\Messaging\CreateAffiliateResponse.cs" />
+    <Compile Include="Marketings\Affiliates\Messaging\GetAffiliateRequest.cs" />
+    <Compile Include="Marketings\Affiliates\Messaging\GetAffiliateResponse.cs" />
+    <Compile Include="Marketings\Affiliates\Messaging\GetAllAffiliatesRequest.cs" />
+    <Compile Include="Marketings\Affiliates\Messaging\GetAllAffiliatesResponse.cs" />
+    <Compile Include="Marketings\Affiliates\Messaging\RemoveAffiliateRequest.cs" />
+    <Compile Include="Marketings\Affiliates\Messaging\RemoveAffiliateResponse.cs" />
+    <Compile Include="Marketings\Affiliates\Messaging\UpdateAffiliateRequest.cs" />
+    <Compile Include="Marketings\Affiliates\Messaging\UpdateAffiliateResponse.cs" />
+    <Compile Include="AutoMapperBootStrapper.cs" />
+    <Compile Include="Baskets\IBasketService.cs" />
+    <Compile Include="Baskets\Messaging\CreateBasketItemsRequest.cs" />
+    <Compile Include="Baskets\Messaging\CreateBasketItemsResponse.cs" />
+    <Compile Include="Baskets\Messaging\GetAllBasketItemsRequest.cs" />
+    <Compile Include="Baskets\Messaging\GetAllBasketItemsResponse.cs" />
+    <Compile Include="Baskets\Messaging\GetBasketRequest.cs" />
+    <Compile Include="Baskets\Messaging\GetBasketResponse.cs" />
+    <Compile Include="Baskets\Messaging\RemoveBasketItemRequest.cs" />
+    <Compile Include="Baskets\Messaging\RemoveBasketItemResponse.cs" />
+    <Compile Include="Baskets\Messaging\UpdateBasketItemRequest.cs" />
+    <Compile Include="Baskets\Messaging\UpdateBasketItemResponse.cs" />
+    <Compile Include="Baskets\BasketViewModel.cs" />
+    <Compile Include="Baskets\BasketValidation.cs" />
+    <Compile Include="Baskets\BasketMapper.cs" />
+    <Compile Include="Baskets\BasketService.cs" />
+    <Compile Include="Blogs\ViewModels\BlogViewModel.cs" />
+    <Compile Include="Blogs\IBlogService.cs" />
+    <Compile Include="Blogs\Messaging\CreateBlogPostRequest.cs" />
+    <Compile Include="Blogs\Messaging\CreateBlogPostResponse.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogPostByTagRequest.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogPostByTagResponse.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogPostRequest.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogPostResponse.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogTagsRequest.cs" />
+    <Compile Include="Blogs\Messaging\GetAllBlogTagsResponse.cs" />
+    <Compile Include="Blogs\Messaging\GetBlogPostRequest.cs" />
+    <Compile Include="Blogs\Messaging\GetBlogPostResponse.cs" />
+    <Compile Include="Blogs\Messaging\RemoveBlogPostRequest.cs" />
+    <Compile Include="Blogs\Messaging\RemoveBlogPostResponse.cs" />
+    <Compile Include="Blogs\Messaging\UpdateBlogPostRequest.cs" />
+    <Compile Include="Blogs\Messaging\UpdateBlogPostResponse.cs" />
+    <Compile Include="Managements\Contacts\IContactService.cs" />
+    <Compile Include="Managements\Contacts\Messaging\CreateContactReplyResponse.cs" />
+    <Compile Include="Managements\Contacts\Messaging\CreateContactRequest.cs" />
+    <Compile Include="Managements\Contacts\Messaging\CreateContactResponse.cs" />
+    <Compile Include="Managements\Contacts\Messaging\CreateContactReplyRequest.cs" />
+    <Compile Include="Managements\Contacts\Messaging\GetAllContactsRequest.cs" />
+    <Compile Include="Managements\Contacts\Messaging\GetAllContactsResponse.cs" />
+    <Compile Include="Managements\Contacts\Messaging\GetContactRequest.cs" />
+    <Compile Include="Managements\Contacts\Messaging\GetContactResponse.cs" />
+    <Compile Include="Managements\Contacts\Messaging\RemoveContactRequest.cs" />
+    <Compile Include="Managements\Contacts\Messaging\RemoveContactResponse.cs" />
+    <Compile Include="Customers\ICustomerService.cs" />
+    <Compile Include="Customers\Messaging\CreateCustomerRequest.cs" />
+    <Compile Include="Customers\Messaging\CreateCustomerResponse.cs" />
+    <Compile Include="Customers\Messaging\GetAllCustomerResponse.cs" />
+    <Compile Include="Customers\Messaging\GetCustomerRequest.cs" />
+    <Compile Include="Customers\Messaging\GetCustomerResponse.cs" />
+    <Compile Include="Customers\Messaging\RemoveCustomerRequest.cs" />
+    <Compile Include="Customers\Messaging\RemoveCustomerResponse.cs" />
+    <Compile Include="Discounts\DiscountMapper.cs" />
+    <Compile Include="Discounts\DiscountService.cs" />
+    <Compile Include="Discounts\IDiscountService.cs" />
+    <Compile Include="Discounts\Messaging\CreateDiscountRequest.cs" />
+    <Compile Include="Discounts\Messaging\CreateDiscountResonse.cs" />
+    <Compile Include="Discounts\Messaging\GetAllDiscountRequest.cs" />
+    <Compile Include="Discounts\Messaging\GetAllDiscountResponse.cs" />
+    <Compile Include="Discounts\Messaging\GetDiscountRequest.cs" />
+    <Compile Include="Discounts\Messaging\GetDiscountResponse.cs" />
+    <Compile Include="Discounts\Messaging\RemoveDiscountRequest.cs" />
+    <Compile Include="Discounts\Messaging\RemoveDiscountResponse.cs" />
+    <Compile Include="Discounts\Messaging\UpdateDiscountRequest.cs" />
+    <Compile Include="Discounts\Messaging\UpdateDiscountResponse.cs" />
+    <Compile Include="Discounts\DiscountValidation.cs" />
+    <Compile Include="Discounts\DiscountViewModel.cs" />
+    <Compile Include="Forums\ForumMapper.cs" />
+    <Compile Include="Forums\ForumService.cs" />
+    <Compile Include="Forums\IForumService.cs" />
+    <Compile Include="Forums\Messaging\CreateForumRequest.cs" />
+    <Compile Include="Forums\Messaging\CreateForumResponse.cs" />
+    <Compile Include="Forums\Messaging\RemoveForumRequest.cs" />
+    <Compile Include="Forums\Messaging\RemoveForumResponse.cs" />
+    <Compile Include="Forums\Messaging\UpdateForumRequest.cs" />
+    <Compile Include="Forums\Messaging\UpdateForumResponse.cs" />
+    <Compile Include="Forums\ForumValidation.cs" />
+    <Compile Include="Forums\ForumViewModel.cs" />
+    <Compile Include="Forums\Posts\ForumPostMapper.cs" />
+    <Compile Include="Forums\Posts\ForumPostService.cs" />
+    <Compile Include="Forums\Posts\ForumPostViewModel.cs" />
+    <Compile Include="Forums\Posts\IForumPostService.cs" />
+    <Compile Include="Forums\Posts\Messaging\CreateForumPostRequest.cs" />
+    <Compile Include="Forums\Posts\Messaging\CreateForumPostResponse.cs" />
+    <Compile Include="Forums\Posts\Messaging\GetForumPostRequest.cs" />
+    <Compile Include="Forums\Posts\Messaging\GetForumPostResponse.cs" />
+    <Compile Include="Forums\Posts\Messaging\RemoveForumPostRequest.cs" />
+    <Compile Include="Forums\Posts\Messaging\RemoveForumPostResponse.cs" />
+    <Compile Include="Forums\Posts\Messaging\UpdateForumPostRequest.cs" />
+    <Compile Include="Forums\Posts\Messaging\UpdateForumPostResponse.cs" />
+    <Compile Include="Forums\PrivateMessages\Messaging.cs" />
+    <Compile Include="Forums\Topics\Messaging\CreateForumTopicRequest.cs" />
+    <Compile Include="Forums\Topics\Messaging\CreateForumTopicResponse.cs" />
+    <Compile Include="Forums\Topics\Messaging\GetAllForumTopicsRequest.cs" />
+    <Compile Include="Forums\Topics\Messaging\GetAllForumTopicsResponse.cs" />
+    <Compile Include="Groups\GroupMapper.cs" />
+    <Compile Include="Groups\GroupService.cs" />
+    <Compile Include="Groups\IGroupService.cs" />
+    <Compile Include="Groups\Messaging\CreateGroupRequest.cs" />
+    <Compile Include="Groups\Messaging\CreateGroupResponse.cs" />
+    <Compile Include="Groups\Messaging\GetAllGroupsByProductBrandRequest.cs" />
+    <Compile Include="Groups\Messaging\GetAllGroupsByProductBrandResponse.cs" />
+    <Compile Include="Groups\Messaging\GetAllGroupsByProductCategoryRequest.cs" />
+    <Compile Include="Groups\Messaging\GetAllGroupsByProductCategoryResponse.cs" />
+    <Compile Include="Groups\Messaging\GetAllGroupsRequest.cs" />
+    <Compile Include="Groups\Messaging\GetAllGroupsRespone.cs" />
+    <Compile Include="Groups\Messaging\GetAllMembersOfGroupRequest.cs" />
+    <Compile Include="Groups\Messaging\GetAllMembersOfGroupResponse.cs" />
+    <Compile Include="Groups\Messaging\GetGroupRequest.cs" />
+    <Compile Include="Groups\Messaging\GetGroupResponse.cs" />
+    <Compile Include="Groups\Messaging\RemoveGroupRequest.cs" />
+    <Compile Include="Groups\Messaging\RemoveGroupResponse.cs" />
+    <Compile Include="Groups\Messaging\RemoveMemberFromGroupRequest.cs" />
+    <Compile Include="Groups\Messaging\RemoveMemberFromGroupResponse.cs" />
+    <Compile Include="Groups\Messaging\UpdateGroupRequest.cs" />
+    <Compile Include="Groups\Messaging\UpdateGroupResponse.cs" />
+    <Compile Include="Groups\GroupValidation.cs" />
+    <Compile Include="Groups\GroupViewModel.cs" />
+    <Compile Include="Languages\ILanguageService.cs" />
+    <Compile Include="Languages\LanguageMapper.cs" />
+    <Compile Include="Languages\LanguageService.cs" />
+    <Compile Include="Languages\Messaging\CreateLanguageRequest.cs" />
+    <Compile Include="Languages\Messaging\CreateLanguageResponse.cs" />
+    <Compile Include="Languages\Messaging\GetAllLangaugeResponse.cs" />
+    <Compile Include="Languages\Messaging\GetAllLanguageRequest.cs" />
+    <Compile Include="Languages\Messaging\GetLanguageRequest.cs" />
+    <Compile Include="Languages\Messaging\GetLanguageResponse.cs" />
+    <Compile Include="Languages\Messaging\RemoveLanguageRequest.cs" />
+    <Compile Include="Languages\Messaging\RemoveLanguageResponse.cs" />
+    <Compile Include="Languages\Messaging\UpdateLanguageRequest.cs" />
+    <Compile Include="Languages\Messaging\UpdateLanguageResponse.cs" />
+    <Compile Include="Languages\LanguageValidation.cs" />
+    <Compile Include="Languages\LanguageViewModel.cs" />
+    <Compile Include="Lotteries\ILotteryService.cs" />
+    <Compile Include="Lotteries\Messaging\CreateLotteryRequest.cs" />
+    <Compile Include="Lotteries\Messaging\CreateLotteryResponse.cs" />
+    <Compile Include="Lotteries\Messaging\GetLotteryRequest.cs" />
+    <Compile Include="Lotteries\Messaging\GetLotteryResponse.cs" />
+    <Compile Include="Lotteries\Messaging\GetLotteryWinnersRequest.cs" />
+    <Compile Include="Lotteries\Messaging\GetLotteryWinnersResponse.cs" />
+    <Compile Include="Lotteries\Messaging\RemoveLotteryRequest.cs" />
+    <Compile Include="Lotteries\Messaging\RemoveLotteryResponse.cs" />
+    <Compile Include="Lotteries\Messaging\UpdateLotteryRequest.cs" />
+    <Compile Include="Lotteries\Messaging\UpdateLotteryResponse.cs" />
+    <Compile Include="Lotteries\LotteryMapper.cs" />
+    <Compile Include="Lotteries\LotteryService.cs" />
+    <Compile Include="Lotteries\LotteryValidation.cs" />
+    <Compile Include="Lotteries\LotteryViewModel.cs" />
+    <Compile Include="BaseResponse.cs" />
+    <Compile Include="MessageType.cs" />
+    <Compile Include="Newses\Messaging\GetAllNewsCategoriesRequest.cs" />
+    <Compile Include="Newses\Messaging\GetAllNewsCategoriesResponse.cs" />
+    <Compile Include="Newses\Messaging\GetAllNewsPostsByCategoryRequest.cs" />
+    <Compile Include="Newses\Messaging\GetAllNewsPostsByCategoryResponse.cs" />
+    <Compile Include="Newses\Messaging\GetAllNewsPostsByTagRequest.cs" />
+    <Compile Include="Newses\Messaging\GetAllNewsPostsByTagResponse.cs" />
+    <Compile Include="Newses\Messaging\GetAllNewsTagRequest.cs" />
+    <Compile Include="Newses\Messaging\GetAllNewsTagResponse.cs" />
+    <Compile Include="Newses\Messaging\RemoveNewsCategoryRequest.cs" />
+    <Compile Include="Newses\Messaging\RemoveNewsCategoryResponse.cs" />
+    <Compile Include="Newses\Messaging\RemoveNewsTagRequest.cs" />
+    <Compile Include="Newses\Messaging\RemoveNewsTagResponse.cs" />
+    <Compile Include="Newses\ViewModels\NewsCategoryViewModel.cs" />
+    <Compile Include="Newses\ViewModels\NewsTagViewModel.cs" />
+    <Compile Include="Products\Messaging\GetAllProductBrandsRequest.cs" />
+    <Compile Include="Products\Messaging\GetAllProductBrandsResponse.cs" />
+    <Compile Include="Products\Messaging\GetAllProductCategoriesRequest.cs" />
+    <Compile Include="Products\Messaging\GetAllProductCategoriesResponse.cs" />
+    <Compile Include="Products\Messaging\GetAllProductTagRequest.cs" />
+    <Compile Include="Products\Messaging\GetAllProductTagResponse.cs" />
+    <Compile Include="Products\Messaging\RemoveProductBrandRequest.cs" />
+    <Compile Include="Products\Messaging\RemoveProductBrandResponse.cs" />
+    <Compile Include="Products\Messaging\RemoveProductCategoryRequest.cs" />
+    <Compile Include="Products\Messaging\RemoveProductCategoryResponse.cs" />
+    <Compile Include="Products\Messaging\RemoveProductTagRequest.cs" />
+    <Compile Include="Products\Messaging\RemoveProductTagResponse.cs" />
+    <Compile Include="Products\VeiwModels\ProductBrandViewModel.cs" />
+    <Compile Include="Products\VeiwModels\ProductCategoryViewModel.cs" />
+    <Compile Include="Products\VeiwModels\ProductColorViewModel.cs" />
+    <Compile Include="Products\VeiwModels\ProductCommentViewModel.cs" />
+    <Compile Include="Products\VeiwModels\ProductManufacturerViewModel.cs" />
+    <Compile Include="Products\VeiwModels\ProductPictureViewModel.cs" />
+    <Compile Include="Products\VeiwModels\ProductSizeViewModel.cs" />
+    <Compile Include="Products\VeiwModels\ProductTagViewModel.cs" />
+    <Compile Include="ServiceMessages.cs" />
+    <Compile Include="Messages\IMessageService.cs" />
+    <Compile Include="Messages\Messaging\CreateMessageRequest.cs" />
+    <Compile Include="Messages\Messaging\CreateMessageResponse.cs" />
+    <Compile Include="Messages\Messaging\GetAllMessageRequest.cs" />
+    <Compile Include="Messages\Messaging\GetAllMessageResponse.cs" />
+    <Compile Include="Messages\Messaging\GetAllUnreadMessagesRequest.cs" />
+    <Compile Include="Messages\Messaging\GetAllUnreadMessagesResponse.cs" />
+    <Compile Include="Messages\Messaging\GetMessageRequest.cs" />
+    <Compile Include="Messages\Messaging\GetMessageResponse.cs" />
+    <Compile Include="Messages\Messaging\RemoveMessageRequest.cs" />
+    <Compile Include="Messages\Messaging\RemoveMessageResponse.cs" />
+    <Compile Include="Customers\Messaging\GetAllCustomerRequest.cs" />
+    <Compile Include="Orders\Messaging\SetOrderPaymentRequest.cs" />
+    <Compile Include="Orders\Messaging\SetOrderPaymentResponse.cs" />
+    <Compile Include="Payments\Messaging\RefundPaymentResponse.cs" />
+    <Compile Include="Newses\INewsService.cs" />
+    <Compile Include="Newses\Messaging\CreateNewsRequest.cs" />
+    <Compile Include="Newses\Messaging\CreateNewsResponse.cs" />
+    <Compile Include="Newses\Messaging\GetAllNewsRequest.cs" />
+    <Compile Include="Newses\Messaging\GetAllNewsResponse.cs" />
+    <Compile Include="Newses\Messaging\GetNewsRequest.cs" />
+    <Compile Include="Newses\Messaging\GetNewsResponse.cs" />
+    <Compile Include="Newses\Messaging\RemoveNewsRequest.cs" />
+    <Compile Include="Newses\Messaging\RemoveNewsResponse.cs" />
+    <Compile Include="Newses\Messaging\UpdateNewsRequest.cs" />
+    <Compile Include="Newses\Messaging\UpdateNewsResponse.cs" />
+    <Compile Include="Orders\IOrderService.cs" />
+    <Compile Include="Orders\OrderMapper.cs" />
+    <Compile Include="Orders\Messaging\CreateOrderRequest.cs" />
+    <Compile Include="Orders\Messaging\CreateOrderResponse.cs" />
+    <Compile Include="Orders\Messaging\GetAllOrdersRequest.cs" />
+    <Compile Include="Orders\Messaging\GetAllOrdersResponse.cs" />
+    <Compile Include="Orders\Messaging\GetOrderRequest.cs" />
+    <Compile Include="Orders\Messaging\GetOrderResponse.cs" />
+    <Compile Include="Orders\Messaging\RemoveOrderRequest.cs" />
+    <Compile Include="Orders\Messaging\RemoveOrderResponse.cs" />
+    <Compile Include="Orders\Messaging\UpdateOrderRequest.cs" />
+    <Compile Include="Orders\Messaging\UpdateOrderResponse.cs" />
+    <Compile Include="Payments\IPaymentService.cs" />
+    <Compile Include="Payments\PaymentMapper.cs" />
+    <Compile Include="Payments\PaymentService.cs" />
+    <Compile Include="Payments\Messaging\CreatePaymentMethodRequest.cs" />
+    <Compile Include="Payments\Messaging\CreatePaymentMethodResponse.cs" />
+    <Compile Include="Payments\Messaging\GetAllPaymentMethodsRequest.cs" />
+    <Compile Include="Payments\Messaging\GetAllPaymentMethodsResponse.cs" />
+    <Compile Include="Payments\Messaging\GetPaymentMethodRequest.cs" />
+    <Compile Include="Payments\Messaging\GetPaymentMethodResponse.cs" />
+    <Compile Include="Payments\Messaging\GetPaymentProcessResultRequest.cs" />
+    <Compile Include="Payments\Messaging\GetPaymentProcessResultResponse.cs" />
+    <Compile Include="Payments\Messaging\RefundPaymentRequest.cs" />
+    <Compile Include="Payments\PaymentValidation.cs" />
+    <Compile Include="Payments\PaymentViewModel.cs" />
+    <Compile Include="Products\IProductService.cs" />
+    <Compile Include="Products\Messaging\CreateProductRequest.cs" />
+    <Compile Include="Products\Messaging\CreateProductResponse.cs" />
+    <Compile Include="Products\Messaging\GetAllBestSellingProductsRequest.cs" />
+    <Compile Include="Products\Messaging\GetAllBestSellingProductsResponse.cs" />
+    <Compile Include="Products\Messaging\GetAllProductRequest.cs" />
+    <Compile Include="Products\Messaging\GetAllProductResponse.cs" />
+    <Compile Include="Products\Messaging\GetAllProductsByBrandRequest.cs" />
+    <Compile Include="Products\Messaging\GetAllProductsByBrandResponse.cs" />
+    <Compile Include="Products\Messaging\GetAllProductsByCategoryRequest.cs" />
+    <Compile Include="Products\Messaging\GetAllProductsByCategoryResponse.cs" />
+    <Compile Include="Products\Messaging\GetAllProductsByTagRequest.cs" />
+    <Compile Include="Products\Messaging\GetAllProductsByTagResponse.cs" />
+    <Compile Include="Products\Messaging\GetProductRequest.cs" />
+    <Compile Include="Products\Messaging\GetProductResponse.cs" />
+    <Compile Include="Products\Messaging\RemoveProductRequest.cs" />
+    <Compile Include="Products\Messaging\RemoveProductResponse.cs" />
+    <Compile Include="Products\Messaging\UpdateProductRequest.cs" />
+    <Compile Include="Products\Messaging\UpdateProductResponse.cs" />
+    <Compile Include="Products\VeiwModels\ProductViewModel.cs" />
+    <Compile Include="Blogs\BlogService.cs" />
+    <Compile Include="Customers\CustomerService.cs" />
+    <Compile Include="Managements\Contacts\ContactService.cs" />
+    <Compile Include="Messages\MessageService.cs" />
+    <Compile Include="Messages\MessageMapping.cs" />
+    <Compile Include="Messages\MessageValidation.cs" />
+    <Compile Include="Messages\MessageViewModel.cs" />
+    <Compile Include="Newses\NewsService.cs" />
+    <Compile Include="Orders\OrderService.cs" />
+    <Compile Include="Orders\OrderValidation.cs" />
+    <Compile Include="Products\ProductService.cs" />
+    <Compile Include="Managements\Reports\IReportService.cs" />
+    <Compile Include="Managements\Reports\ReportMapper.cs" />
+    <Compile Include="Managements\Reports\ReportService.cs" />
+    <Compile Include="Managements\Reports\Messaging\CreateReportRequest.cs" />
+    <Compile Include="Managements\Reports\Messaging\CreateReportResponse.cs" />
+    <Compile Include="Managements\Reports\Messaging\GetAllReportRequest.cs" />
+    <Compile Include="Managements\Reports\Messaging\GetAllReportResponse.cs" />
+    <Compile Include="Managements\Reports\Messaging\GetReportRequest.cs" />
+    <Compile Include="Managements\Reports\Messaging\GetReportResponse.cs" />
+    <Compile Include="Managements\Reports\Messaging\RemoveReportRequest.cs" />
+    <Compile Include="Managements\Reports\Messaging\RemoveReportResponse.cs" />
+    <Compile Include="Managements\Reports\Messaging\UpdateReportRequest.cs" />
+    <Compile Include="Managements\Reports\Messaging\UpdateReportResponse.cs" />
+    <Compile Include="Managements\Reports\ReportValidation.cs" />
+    <Compile Include="Managements\Reports\ReportViewModel.cs" />
+    <Compile Include="Shippings\IShippingService.cs" />
+    <Compile Include="Shippings\ShippingMapper.cs" />
+    <Compile Include="Shippings\Messaging\CreateShippingMethodRequest.cs" />
+    <Compile Include="Shippings\Messaging\CreateShippingMethodResponse.cs" />
+    <Compile Include="Shippings\Messaging\GetAllShippingMethodsRequest.cs" />
+    <Compile Include="Shippings\Messaging\GetAllShippingMethodsResponse.cs" />
+    <Compile Include="Shippings\Messaging\GetShippingMethodRequest.cs" />
+    <Compile Include="Shippings\Messaging\GetShippingMethodResponse.cs" />
+    <Compile Include="Shippings\Messaging\RemoveShippingMethodRequest.cs" />
+    <Compile Include="Shippings\Messaging\RemoveShippingMethodResponse.cs" />
+    <Compile Include="Shippings\Messaging\UpdateShippingMethodRequest.cs" />
+    <Compile Include="Shippings\Messaging\UpdateShippingMethodResponse.cs" />
+    <Compile Include="Shippings\ShippingValidation.cs" />
+    <Compile Include="Shippings\ShippingViewModel.cs" />
+    <Compile Include="Shippings\ShippingService.cs" />
+    <Compile Include="Stores\IStoreService.cs" />
+    <Compile Include="Stores\StoreService.cs" />
+    <Compile Include="Blogs\BlogMapper.cs" />
+    <Compile Include="Customers\AddressMapper.cs" />
+    <Compile Include="Customers\CustomerMapper.cs" />
+    <Compile Include="Managements\Contacts\ContactMapper.cs" />
+    <Compile Include="Newses\NewsMapper.cs" />
+    <Compile Include="Products\ProductMapper.cs" />
+    <Compile Include="Stores\StoreMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Blogs\BlogValidation.cs" />
+    <Compile Include="Managements\Contacts\ContactViewModel.cs" />
+    <Compile Include="Accounts\ViewModel\LogOnViewModel.cs" />
+    <Compile Include="Accounts\ViewModel\RegisterViewModel.cs" />
+    <Compile Include="Managements\Contacts\ContactValidation.cs" />
+    <Compile Include="Customers\AddressValidation.cs" />
+    <Compile Include="Customers\AddressViewModel.cs" />
+    <Compile Include="Customers\CustomerValidation.cs" />
+    <Compile Include="Customers\CustomerViewModel.cs" />
+    <Compile Include="Newses\NewsValidation.cs" />
+    <Compile Include="Newses\ViewModels\NewsViewModel.cs" />
+    <Compile Include="Orders\OrderViewModel.cs" />
+    <Compile Include="Products\ProductValidation.cs" />
+    <Compile Include="Stores\Messaging\CreateStoreRequest.cs" />
+    <Compile Include="Stores\Messaging\CreateStoreResponse.cs" />
+    <Compile Include="Stores\Messaging\GetAllMostVisitedStoresRequest.cs" />
+    <Compile Include="Stores\Messaging\GetAllMostVisitedStoresResponse.cs" />
+    <Compile Include="Stores\Messaging\GetAllStoreRequest.cs" />
+    <Compile Include="Stores\Messaging\GetAllStoreResponse.cs" />
+    <Compile Include="Stores\Messaging\GetAllStoresByBrandRequest.cs" />
+    <Compile Include="Stores\Messaging\GetAllStoresByBrandResponse.cs" />
+    <Compile Include="Stores\Messaging\GetAllStoresByCategoryRequest.cs" />
+    <Compile Include="Stores\Messaging\GetAllStoresByCategoryResponse.cs" />
+    <Compile Include="Stores\Messaging\GetStoreRequest.cs" />
+    <Compile Include="Stores\Messaging\GetStoreResponse.cs" />
+    <Compile Include="Stores\Messaging\RemoveStoreRequest.cs" />
+    <Compile Include="Stores\Messaging\RemoveStoreResponse.cs" />
+    <Compile Include="Stores\Messaging\UpdateStoreRequest.cs" />
+    <Compile Include="Stores\Messaging\UpdateStoreResponse.cs" />
+    <Compile Include="Stores\StoreValidation.cs" />
+    <Compile Include="Stores\StoreViewModel.cs" />
+    <Compile Include="Accounts\Validation\LogOnValidation.cs" />
+    <Compile Include="Accounts\ViewModel\ChangePassowrdViewModel.cs" />
+    <Compile Include="Taxes\ITaxService.cs" />
+    <Compile Include="Taxes\Messaging\CreateTaxRequest.cs" />
+    <Compile Include="Taxes\Messaging\CreateTaxResponse.cs" />
+    <Compile Include="Taxes\Messaging\GetAllTaxesRequest.cs" />
+    <Compile Include="Taxes\Messaging\GetAllTaxResponse.cs" />
+    <Compile Include="Taxes\Messaging\GetTaxRequest.cs" />
+    <Compile Include="Taxes\Messaging\GetTaxResponse.cs" />
+    <Compile Include="Taxes\Messaging\RemoveTaxRequest.cs" />
+    <Compile Include="Taxes\Messaging\RemoveTaxResponse.cs" />
+    <Compile Include="Taxes\Messaging\UpdateTaxRequest.cs" />
+    <Compile Include="Taxes\Messaging\UpdateTaxResponse.cs" />
+    <Compile Include="Taxes\TaxMapper.cs" />
+    <Compile Include="Taxes\TaxService.cs" />
+    <Compile Include="Taxes\TaxValidation.cs" />
+    <Compile Include="Taxes\TaxViewModel.cs" />
+    <Compile Include="Vendors\IVendorService.cs" />
+    <Compile Include="Vendors\Messaging\UpdateVendorResponse.cs" />
+    <Compile Include="Vendors\Messaging\CreateVendorRequest.cs" />
+    <Compile Include="Vendors\Messaging\CreateVendorResponse.cs" />
+    <Compile Include="Vendors\Messaging\GetAllVendorsRequest.cs" />
+    <Compile Include="Vendors\Messaging\GetAllVendorsResponse.cs" />
+    <Compile Include="Vendors\Messaging\GetVendorResponse.cs" />
+    <Compile Include="Vendors\Messaging\GetVendorRequest.cs" />
+    <Compile Include="Vendors\Messaging\RemoveVendorRequest.cs" />
+    <Compile Include="Vendors\Messaging\RemoveVendorResponse.cs" />
+    <Compile Include="Vendors\Messaging\UpdateVendorRequest.cs" />
+    <Compile Include="Vendors\VendorMapper.cs" />
+    <Compile Include="Vendors\VendorService.cs" />
+    <Compile Include="Vendors\VendorValidation.cs" />
+    <Compile Include="Vendors\VendorViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ECommerce.CrossCutting\ECommerce.CrossCutting.csproj">
+      <Project>{54790f79-a640-455c-b6cb-3642c8dfeb4b}</Project>
+      <Name>ECommerce.CrossCutting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ECommerce.Infrastructure\ECommerce.Infrastructure.csproj">
+      <Project>{05F8791A-0E49-4557-97C0-BE8E04EAA095}</Project>
+      <Name>ECommerce.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ECommerce.Model\ECommerce.Model.csproj">
+      <Project>{7351D65E-C338-4F3D-8A61-16272FEA7DCA}</Project>
+      <Name>ECommerce.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forums\PrivateMessages\Messaging\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

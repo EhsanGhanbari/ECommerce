@@ -1,0 +1,10 @@
+﻿@model IEnumerable<ECommerce.Services.Blogs.ViewModels.BlogTagViewModel>
+@{
+    ViewBag.Title = "_BlogTags";
+}
+
+
+@foreach (var item in Model)
+{
+    @Html.ActionLink(item.BlogTagName, "PostByTag", "Blog", new { tagName = item.BlogTagName }, null)
+}

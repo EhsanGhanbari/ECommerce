@@ -1,0 +1,25 @@
+﻿@using FluentNHibernate.Conventions
+@model ECommerce.Services.Blogs.ViewModels.BlogViewModel
+@{
+    ViewBag.Title = "Post";
+}
+
+<div>
+    @Html.DisplayTextFor(post => post.Title)
+</div>
+<div>
+    @Html.DisplayFor(post => post.TageName)
+</div>
+
+<div>
+    @Html.DisplayTextFor(post => post.Body)
+</div>
+
+<div>
+    @Html.DisplayTextFor(post => post.Summary)
+</div>
+
+
+
+
+

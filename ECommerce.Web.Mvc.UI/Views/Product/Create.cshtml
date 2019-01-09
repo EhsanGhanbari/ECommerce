@@ -1,0 +1,41 @@
+﻿@model ECommerce.Services.Products.VeiwModels.ProductViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "../Shared/_Layout.Main.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(product=>product.Name)
+        @Html.TextBoxFor(product=>product.Name)
+    </div>
+    <div>
+        @Html.LabelFor(product=>product.ProductCategoryViewModel)
+        @Html.TextBoxFor(product=>product.ProductCategoryViewModel)
+    </div>
+    
+    <div>
+        @Html.LabelFor(product=>product.ProductColorViewModel)
+        @Html.TextBoxFor(product=>product.ProductColorViewModel)
+    </div>
+    
+    <div>
+        @Html.LabelFor(product=>product.Price)
+        @Html.TextBoxFor(product=>product.Price)
+    </div>
+    
+    <div>
+        @Html.LabelFor(product=>product.ProductSizeViewModel)
+        @Html.TextBoxFor(product=>product.ProductSizeViewModel)
+    </div>
+    
+    <div>
+        @Html.LabelFor(product=>product.ProductBrandViewModel)
+        @Html.TextBoxFor(product=>product.ProductBrandViewModel)
+    </div>
+    
+    <div>
+        <input type="submit" value="Create"/>
+    </div>
+}

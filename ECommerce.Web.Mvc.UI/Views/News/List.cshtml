@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ECommerce.Services.Newses.ViewModels.NewsViewModel>
+@{
+    ViewBag.Title = "List";
+    Layout = "../Shared/_Layout.Main.cshtml";
+}
+
+
+@foreach (var item in Model)
+{
+    @Html.ActionLink(item.Title,"")
+}
+

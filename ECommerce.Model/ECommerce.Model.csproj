@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7351D65E-C338-4F3D-8A61-16272FEA7DCA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ECommerce.Model</RootNamespace>
+    <AssemblyName>ECommerce.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\Account.cs" />
+    <Compile Include="Accounts\AccountBusinessRule.cs" />
+    <Compile Include="Accounts\IAccountRepository.cs" />
+    <Compile Include="Accounts\Profiles\ProfilePicture.cs" />
+    <Compile Include="Accounts\Profiles\Education.cs" />
+    <Compile Include="Accounts\Profiles\IProfile.cs" />
+    <Compile Include="Accounts\Profiles\Profile.cs" />
+    <Compile Include="Baskets\BasketBusinessRule.cs" />
+    <Compile Include="Baskets\BasketItem.cs" />
+    <Compile Include="Baskets\BasketItemFactory.cs" />
+    <Compile Include="Blogs\BlogCategory.cs" />
+    <Compile Include="Blogs\BlogCategoryBusinessRule.cs" />
+    <Compile Include="Blogs\BlogComment.cs" />
+    <Compile Include="Blogs\BlogTagBusinessRule.cs" />
+    <Compile Include="Blogs\BlogSetting.cs" />
+    <Compile Include="Blogs\IBlogRepository.cs" />
+    <Compile Include="Blogs\Blog.cs" />
+    <Compile Include="Blogs\BlogBusinessRule.cs" />
+    <Compile Include="Blogs\BlogTag.cs" />
+    <Compile Include="Commons\Category.cs" />
+    <Compile Include="Commons\Comment.cs" />
+    <Compile Include="Contracts\Contract.cs" />
+    <Compile Include="Discounts\DiscountRule.cs" />
+    <Compile Include="Loggings\ILoggingRepository.cs" />
+    <Compile Include="Management\ContactBusinessRule.cs" />
+    <Compile Include="Management\Contact.cs" />
+    <Compile Include="Management\IContactRepository.cs" />
+    <Compile Include="Baskets\Basket.cs" />
+    <Compile Include="Baskets\BasketItemBusinessRules.cs" />
+    <Compile Include="Baskets\IBasketRepository.cs" />
+    <Compile Include="Customers\Address.cs" />
+    <Compile Include="Customers\DeliveryAddressBusinessRules.cs" />
+    <Compile Include="Customers\DeliveryAddress.cs" />
+    <Compile Include="Groups\IGroupRepository.cs" />
+    <Compile Include="Identities\Country.cs" />
+    <Compile Include="Identities\Province.cs" />
+    <Compile Include="Loggings\ActivityLog.cs" />
+    <Compile Include="Loggings\ActivityLogType.cs" />
+    <Compile Include="Management\ReportBusinessRule.cs" />
+    <Compile Include="Newses\NewsCategory.cs" />
+    <Compile Include="Newses\NewsComment.cs" />
+    <Compile Include="Orders\OrderStatus.cs" />
+    <Compile Include="Orders\IOrderState.cs" />
+    <Compile Include="Orders\OrderAlreadyPaidForException.cs" />
+    <Compile Include="Orders\PaymentAmountDoesNotEqualOrderTotalException.cs" />
+    <Compile Include="Orders\OrderItemFactory.cs" />
+    <Compile Include="Commons\Picture.cs" />
+    <Compile Include="Products\DomainService\IProductDomainService.cs" />
+    <Compile Include="Products\DomainService\ProductDomainService.cs" />
+    <Compile Include="Products\IProductAttribute.cs" />
+    <Compile Include="Products\ProductCatalog.cs" />
+    <Compile Include="Products\ProductCategory.cs" />
+    <Compile Include="Customers\CustomerBusinessRules.cs" />
+    <Compile Include="Customers\Customer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Customers\ICustomerRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Discounts\DiscountBusinessRule.cs" />
+    <Compile Include="Discounts\DiscountUsageHistory.cs" />
+    <Compile Include="Discounts\Discount.cs" />
+    <Compile Include="Discounts\DiscountType.cs" />
+    <Compile Include="Discounts\DiscountLimitationType.cs" />
+    <Compile Include="Discounts\DiscountRequirement.cs" />
+    <Compile Include="Discounts\IDiscountRepository.cs" />
+    <Compile Include="Forums\EditorType.cs" />
+    <Compile Include="Forums\Forum.cs" />
+    <Compile Include="Forums\ForumGroup.cs" />
+    <Compile Include="Forums\ForumPost.cs" />
+    <Compile Include="Forums\ForumSearchType.cs" />
+    <Compile Include="Forums\ForumSettings.cs" />
+    <Compile Include="Forums\ForumSubscription.cs" />
+    <Compile Include="Forums\ForumTopic.cs" />
+    <Compile Include="Forums\ForumTopicType.cs" />
+    <Compile Include="Forums\IForumRepository.cs" />
+    <Compile Include="Forums\PrivateMessage.cs" />
+    <Compile Include="Groups\Group.cs" />
+    <Compile Include="Groups\GroupBusinessRule.cs" />
+    <Compile Include="Languages\ILanguageRepository.cs" />
+    <Compile Include="Languages\Language.cs" />
+    <Compile Include="Languages\LanguageBusinessRule.cs" />
+    <Compile Include="Loggings\Logging.cs" />
+    <Compile Include="Lotteries\ILotteryRepository.cs" />
+    <Compile Include="Lotteries\Lottery.cs" />
+    <Compile Include="Lotteries\LotteryBusinessRule.cs" />
+    <Compile Include="Lotteries\Winners.cs" />
+    <Compile Include="Marketing\Affiliate.cs" />
+    <Compile Include="Marketing\Content.cs" />
+    <Compile Include="Marketing\Email.cs" />
+    <Compile Include="Marketing\Referral.cs" />
+    <Compile Include="Marketing\SocialMedia.cs" />
+    <Compile Include="Media\PictureType.cs" />
+    <Compile Include="Media\Picture.cs" />
+    <Compile Include="Media\Download.cs" />
+    <Compile Include="Messages\IMessageRepository.cs" />
+    <Compile Include="Messages\Message.cs" />
+    <Compile Include="Newses\INewsRepository.cs" />
+    <Compile Include="Newses\News.cs" />
+    <Compile Include="Newses\NewsBusinessRule.cs" />
+    <Compile Include="Newses\NewsTag.cs" />
+    <Compile Include="Orders\IOrderRepository.cs" />
+    <Compile Include="Orders\Order.cs" />
+    <Compile Include="Orders\OrderBusinessRules.cs" />
+    <Compile Include="Orders\OrderItem.cs" />
+    <Compile Include="Orders\OrderItemBusinessRule.cs" />
+    <Compile Include="Payments\IPaymentRepository.cs" />
+    <Compile Include="Payments\PaymentFactory.cs" />
+    <Compile Include="Payments\PaymentBusinessRules.cs" />
+    <Compile Include="Payments\Payment.cs" />
+    <Compile Include="Products\ProductBrand.cs" />
+    <Compile Include="Products\ProductComment.cs" />
+    <Compile Include="Products\ProductManufacturer.cs" />
+    <Compile Include="Products\ProductPicture.cs" />
+    <Compile Include="Products\ProductBusinnessRule.cs" />
+    <Compile Include="Products\ProductSize.cs" />
+    <Compile Include="Products\ProductColor.cs" />
+    <Compile Include="Products\IProductRepository.cs" />
+    <Compile Include="Products\Product.cs" />
+    <Compile Include="Products\ProductTag.cs" />
+    <Compile Include="Products\Specification\ProductDtoIsInCategorySpecification.cs" />
+    <Compile Include="Products\Specification\ProductDtoIsInColourSpecification.cs" />
+    <Compile Include="Products\Specification\ProductDtoIsInSizeSpecification.cs" />
+    <Compile Include="Products\Specification\ProductDtoIsMadeByBrandSpecification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Management\IReportRepository.cs" />
+    <Compile Include="Management\Report.cs" />
+    <Compile Include="Shippings\IShippingRepository.cs" />
+    <Compile Include="Shippings\ShippingBusinessRule.cs" />
+    <Compile Include="Shippings\ShippingStatus.cs" />
+    <Compile Include="Shippings\Courier.cs" />
+    <Compile Include="Shippings\Shipping.cs" />
+    <Compile Include="Stores\IStoreRepository.cs" />
+    <Compile Include="Stores\Store.cs" />
+    <Compile Include="Stores\StoreBusinessRule.cs" />
+    <Compile Include="Commons\Tag.cs" />
+    <Compile Include="Taxes\Tax.cs" />
+    <Compile Include="Taxes\TaxBusinessRules.cs" />
+    <Compile Include="Taxes\ITaxRepository.cs" />
+    <Compile Include="Vendors\IVendorRepository.cs" />
+    <Compile Include="Vendors\Vendor.cs" />
+    <Compile Include="Vendors\VendorBusinessRules.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SocialMedia\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ECommerce.Infrastructure\ECommerce.Infrastructure.csproj">
+      <Project>{05F8791A-0E49-4557-97C0-BE8E04EAA095}</Project>
+      <Name>ECommerce.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
